@@ -1,0 +1,4 @@
+JetBrains/* filter=lfs diff=lfs merge=lfs -text
+JetBrains/CLion2023.3/* filter=lfs diff=lfs merge=lfs -text
+JetBrains/CLion2023.3/plugins/* filter=lfs diff=lfs merge=lfs -text
+*.jar filter=lfs diff=lfs merge=lfs -text

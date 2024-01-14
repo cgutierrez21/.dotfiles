@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE QtCreatorSession>
+<!-- Written by QtCreator 12.0.1, 2024-01-12T18:27:25. -->
+<qtcreator>
+ <data>
+  <variable>CascadeSetActive</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>Color</variable>
+  <value type="QString">#666666</value>
+ </data>
+ <data>
+  <variable>EditorSettings</variable>
+  <value type="QByteArray">AAAAD0VkaXRvck1hbmFnZXJWNQAAAAEAAAB4AC8AVQBzAGUAcgBzAC8AYwByAGkAcwB0AGkAYQBuAGcAdQB0AGkAZQByAHIAZQB6AC8AUQB0AC8AUAByAG8AagBlAGMAdABzAC8ATQBvAG4AawBlAHkAXwBMAGkAYgByAGEAcgB5AC8AbQBhAGkAbgAuAGMAcABwAAAADAAAAAAgAAAAAgAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAsAAAABAAAAeAAvAFUAcwBlAHIAcwAvAGMAcgBpAHMAdABpAGEAbgBnAHUAdABpAGUAcgByAGUAegAvAFEAdAAvAFAAcgBvAGoAZQBjAHQAcwAvAE0AbwBuAGsAZQB5AF8ATABpAGIAcgBhAHIAeQAvAG0AYQBpAG4ALgBjAHAAcAAAABAAbQBhAGkAbgAuAGMAcABwAAAAE0NwcEVkaXRvci5DKytFZGl0b3IAAAABmgAAAA1jdXJyZW50ZWRpdG9yAAAAeAAvAFUAcwBlAHIAcwAvAGMAcgBpAHMAdABpAGEAbgBnAHUAdABpAGUAcgByAGUAegAvAFEAdAAvAFAAcgBvAGoAZQBjAHQAcwAvAE0AbwBuAGsAZQB5AF8ATABpAGIAcgBhAHIAeQAvAG0AYQBpAG4ALgBjAHAAcAAAACYAQwBwAHAARQBkAGkAdABvAHIALgBDACsAKwBFAGQAaQB0AG8AcgAAACAAAAACAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAACwAAAAEAAAC3AAAAeAAvAFUAcwBlAHIAcwAvAGMAcgBpAHMAdABpAGEAbgBnAHUAdABpAGUAcgByAGUAegAvAFEAdAAvAFAAcgBvAGoAZQBjAHQAcwAvAE0AbwBuAGsAZQB5AF8ATABpAGIAcgBhAHIAeQAvAG0AYQBpAG4ALgBjAHAAcAAAABNDcHBFZGl0b3IuQysrRWRpdG9yAAAAIAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAALAAAAAA==</value>
+ </data>
+ <data>
+  <variable>ProjectDependencies</variable>
+  <valuemap type="QVariantMap"/>
+ </data>
+ <data>
+  <variable>ProjectList</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">/Users/cristiangutierrez/Qt/Examples/Qt-6.6.1/demos/calqlatr/CMakeLists.txt</value>
+   <value type="QString">/Users/cristiangutierrez/Qt/Projects/Monkey_Library/CMakeLists.txt</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>StartupProject</variable>
+  <value type="QString">/Users/cristiangutierrez/Qt/Projects/Monkey_Library/CMakeLists.txt</value>
+ </data>
+ <data>
+  <variable>value-ActiveMode</variable>
+  <value type="QString">Edit</value>
+ </data>
+ <data>
+  <variable>value-Breakpoints</variable>
+  <valuelist type="QVariantList"/>
+ </data>
+ <data>
+  <variable>value-ProjectTree.ExpandData</variable>
+  <valuelist type="QVariantList">
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/cristiangutierrez/Qt/Projects/Monkey_Library</value>
+    <value type="int">200005</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/cristiangutierrez/Qt/Projects/Monkey_Library</value>
+    <value type="int">200000</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/cristiangutierrez/Qt/Projects/Monkey_Library</value>
+    <value type="int">400900</value>
+   </valuelist>
+  </valuelist>
+ </data>
+ <data>
+  <variable>value-TaskWindow.Categories</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">Task.Category.QmlAnalysis</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>value-TaskWindow.IncludeWarnings</variable>
+  <value type="bool">true</value>
+ </data>
+ <data>
+  <variable>valueKeys</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">ActiveMode</value>
+   <value type="QString">Breakpoints</value>
+   <value type="QString">ProjectTree.ExpandData</value>
+   <value type="QString">TaskWindow.Categories</value>
+   <value type="QString">TaskWindow.IncludeWarnings</value>
+  </valuelist>
+ </data>
+</qtcreator>
