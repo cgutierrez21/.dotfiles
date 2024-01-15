@@ -74,16 +74,6 @@ vim.keymap.set( {"n", "v"}, "<C-j>", ":<C-U>nvim_tmux_nav.NvimTmuxNavigateDown<c
 vim.keymap.set( {"n", "v"}, "<C-k>", ":<C-U>nvim_tmux_nav.NvimTmuxNavigateUp<cr>" )
 vim.keymap.set( {"n", "v"}, "<C-l>", ":<C-U>nvim_tmux_nav.NvimTmuxNavigateRight<cr>" )
 
-
--- Git Blame
-vim.keymap.set("n", "<leader>gt", ":GitBlameToggle <CR>", {desc="Toggle git blame"})
-vim.keymap.set("n", "<leader>go", ":GitBlameOpenCommitURL <CR>", {desc="Open commit url"})
-vim.keymap.set("n", "<leader>ge", ":GitBlameEnable <CR>", {desc="Enable git blame"})
-vim.keymap.set("n", "<leader>gd", ":GitBlameDisable <CR>", {desc="Disable git blame"})
-
--- Fugitive
-vim.keymap.set("n", "<leader>gs", vim.cmd.Git, {desc = "Git view"});
-
 -- Telescope
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = "Find files"})
@@ -94,6 +84,3 @@ end, {desc = "Project search"})
 
 -- Undotree
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, {desc = "Toggle undotree window"})
-
--- Notify
-vim.keymap.set({"n", "v"}, "<leader>nh", "<cmd>Telescope notify<CR>", {desc = "Show notifications history"})
