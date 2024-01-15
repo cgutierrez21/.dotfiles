@@ -68,12 +68,6 @@ vim.keymap.set("n", "<leader>tlt", function() require("trouble").open("lsp_type_
 vim.keymap.set("n", "<leader>ttd", ":TodoTrouble keywords=TODO,FIX,WARN<CR>", {desc = "Find TODOs, FIXes, WARNs"})
 
 
--- Tmux Navigator
-vim.keymap.set( {"n", "v"}, "<C-h>", ":<C-U>nvim_tmux_nav.NvimTmuxNavigateLeft<cr>" )
-vim.keymap.set( {"n", "v"}, "<C-j>", ":<C-U>nvim_tmux_nav.NvimTmuxNavigateDown<cr>" )
-vim.keymap.set( {"n", "v"}, "<C-k>", ":<C-U>nvim_tmux_nav.NvimTmuxNavigateUp<cr>" )
-vim.keymap.set( {"n", "v"}, "<C-l>", ":<C-U>nvim_tmux_nav.NvimTmuxNavigateRight<cr>" )
-
 -- Telescope
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = "Find files"})
