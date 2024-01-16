@@ -9,38 +9,3 @@ vim.api.nvim_create_autocmd('LspAttach', {
 end
 })
 
-local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-local default_setup = function(server)
-  require('lspconfig')[server].setup({
-    capabilities = lsp_capabilities,
-  })
-end
-
-require('mason').setup({})
-require('mason-lspconfig').setup({
-	ensure_installed = {},
-	handlers = {
-		default_setup,
-	},
-})
-
-local cmp = require('cmp')
-cmp.setup({
-	sources = {
-		{name = 'nvim_lsp'},
-	},
-	mapping = cmp.mapping.preset.insert({
-		['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-		['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-		['<C-y>'] = cmp.mapping.confirm({ select = true }),
-		["<C-space>"] = cmp.mapping.complete(),
-		['<Tab>'] = nil,
-		['<S-Tab>'] = nil,
-	}),
-	snippet = {
-		expand = function(args)
-			require('luasnip').lsp_expand(args.body)
-		end,
-	},
-})

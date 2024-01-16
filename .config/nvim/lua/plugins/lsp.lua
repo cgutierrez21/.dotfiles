@@ -1,28 +1,92 @@
 return {
 
-	{
-		'williamboman/mason.nvim'
-	},
+    {
+        'williamboman/mason.nvim',
+        dependencies = {
+            'williamboman/mason-lspconfig.nvim',
+        },
+        config = function()
+            require("mason").setup({
+                ui = {
+                    icons = {
+                        enabled = true,
+                        style = "solid",
+                    },
+                },
+            })
+            require("mason-lspconfig").setup({
+                ensure_installed = {
+                    "clangd",
+                    "pyright",
+                    "cmake",
+                },
+                automatic_installation = true,
+            })
+        end
 
-	{
-		'williamboman/mason-lspconfig.nvim'
-	},
+    },
 
-	{
-		'neovim/nvim-lspconfig',
-	},
+    {
+        "folke/neodev.nvim",
+        config = function()
+            -- IMPORTANT: make sure to setup neodev BEFORE lspconfig
+            require("neodev").setup({
+                -- add any options here, or leave empty to use the default settings
+            })
 
-	{
-		'hrsh7th/cmp-nvim-lsp'
-	},
+            -- then setup your lsp server as usual
+            local lspconfig = require('lspconfig')
 
-	{
-		'hrsh7th/nvim-cmp'
-	},
+            -- example to setup lua_ls and enable call snippets
+            lspconfig.lua_ls.setup({
+                settings = {
+                    Lua = {
+                        completion = {
+                            callSnippet = "Replace"
+                        }
+                    }
+                }
+            })
+        end
+    },
 
-	{
-		'L3MON4D3/LuaSnip'
-	},
+    {
+        'hrsh7th/nvim-cmp',
+        event = 'InsertEnter',
+        dependencies = {
+            'neovim/nvim-lspconfig',
+            'hrsh7th/cmp-nvim-lsp',
+            'L3MON4D3/LuaSnip',
+        },
+        config = function ()
+            local cmp = require('cmp')
+            cmp.setup({
+                sources = {
+                    {name = 'nvim_lsp'},
+                },
+                mapping = cmp.mapping.preset.insert({
+                    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+                    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+                    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+                    ["<C-space>"] = cmp.mapping.complete(),
+                    ['<Tab>'] = nil,
+                    ['<S-Tab>'] = nil,
+                }),
+                snippet = {
+                    expand = function(args)
+                        require('luasnip').lsp_expand(args.body)
+                    end,
+                },
+            })
+            local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+            local default_setup = function(server)
+                require('lspconfig')[server].setup({
+                    capabilities = lsp_capabilities,
+                })
+            end
+        end
+    },
 
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",
@@ -33,7 +97,7 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		config = function()
-            require("nvim-treesitter").setup({
+            require("nvim-treesitter.configs").setup({
 			ensure_installed = { "c", "cpp", "python", "lua", "vim", "vimdoc", "query" },
 
 			sync_install = false,

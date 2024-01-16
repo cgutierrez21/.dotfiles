@@ -6,7 +6,7 @@ return {
             require("lualine").setup({
             options = {
                 sections = {
-                    theme = 'noctishc',
+                    theme = 'duckbones',
                     lualine_a = {'mode'},
                     lualine_b = {'branch', 'diff', 'diagnostics'},
                     lualine_c = {'filename', 'filetype'},

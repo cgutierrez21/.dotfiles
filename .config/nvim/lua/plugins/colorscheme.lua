@@ -13,7 +13,7 @@ return {
 
 	{
 		"iagorrr/noctishc.nvim",
-		lazy = false,
+		lazy = true,
 		priority = 1000,
 	},
 
@@ -23,16 +23,16 @@ return {
 		priority = 1000,
 	},
 
-	{
-		"mcchrish/zenbones.nvim",
-		--dependencies = "rktjmp/lush.nvim"
-		lazy = true,
-		priority = 1000,
-	},
+    {
+        "mcchrish/zenbones.nvim",
+        dependencies = "rktjmp/lush.nvim",
+        lazy = true,
+        priority = 1000,
+    },
 
     {
         "catppuccin/nvim",
-        lazy = true,
+        lazy = false,
         name = "catppuccin",
         priority = 1000,
         config = function()
