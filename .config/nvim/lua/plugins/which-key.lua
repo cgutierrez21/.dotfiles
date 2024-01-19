@@ -7,10 +7,11 @@ return {
 	end,
 	config = function()
 		require("which-key").register({
-			["<leader>t"] = { name = 'Trouble keymaps' },
-			["<leader>b"] = { name = 'Background keymaps' },
-			["<leader>p"] = { name = 'Search and Lazy keymaps' },
-			["<leader>v"] = { name = 'LSP zero keymaps' },
+			["<leader>t"] = { name = "Trouble keymaps" },
+			["<leader>b"] = { name = "Background keymaps" },
+			["<leader>p"] = { name = "Search and Lazy keymaps" },
+			["<leader>v"] = { name = "LSP zero keymaps" },
+			["<leader>f"] = { name = "Code formatting" },
 		})
 	end,
 }
