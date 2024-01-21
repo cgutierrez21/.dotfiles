@@ -148,3 +148,6 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.dotfiles/.p10k.zsh ]] || source ~/.dotfiles/.p10k.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# opam configuration
+[[ ! -r /Users/cristiangutierrez/.opam/opam-init/init.zsh ]] || source /Users/cristiangutierrez/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

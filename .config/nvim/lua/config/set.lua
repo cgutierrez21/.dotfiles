@@ -1,4 +1,4 @@
-vim.opt.background = "dark"
+--vim.opt.background = "dark"
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 --vim.cmd("hi! Comment gui=italic cterm=italic guifg=#d1d1d1")
@@ -35,6 +35,6 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldcolumn = "1"
 vim.opt.foldlevel = 20
 
-vim.cmd("hi! Comment gui=italic cterm=italic guifg=#999999")
-vim.cmd("hi! @variable.cpp guifg=#ff1c1c")
-vim.cmd("hi! @Comment.cpp guifg=#999999")
+--vim.cmd("hi! Comment gui=italic cterm=italic guifg=#999999")
+--vim.cmd("hi! @variable.cpp guifg=#ff1c1c")
+--vim.cmd("hi! @Comment.cpp guifg=#999999")

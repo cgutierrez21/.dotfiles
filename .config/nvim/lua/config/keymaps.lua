@@ -30,10 +30,10 @@ vim.keymap.set("n", "<C-f>", "<cmd> !tmux neww tmux-sessionizer<CR>", { desc = "
 vim.keymap.set("n", "Q", "<nop>")
 
 vim.keymap.set(
-	"n",
-	"<leader>s",
-	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-	{ desc = "Replace word under cursor" }
+    "n",
+    "<leader>s",
+    [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+    { desc = "Replace word under cursor" }
 )
 
 -- Lazypm
@@ -45,50 +45,50 @@ vim.keymap.set({ "n", "v" }, "<leader>pmp", "<cmd>Lazy profile<CR>", { desc = "O
 local harpoon = require("harpoon")
 harpoon:setup()
 vim.keymap.set("n", "<leader>a", function()
-	harpoon:list():append()
+    harpoon:list():append()
 end, { desc = "Add current file to Harpoon list" })
 vim.keymap.set("n", "<C-e>", function()
-	harpoon.ui:toggle_quick_menu(harpoon:list())
+    harpoon.ui:toggle_quick_menu(harpoon:list())
 end, { desc = "Toggle Harpoon menu" })
 vim.keymap.set("n", "<leader>h", function()
-	harpoon:list():select(1)
+    harpoon:list():select(1)
 end, { desc = "Got to first file in list" })
 vim.keymap.set("n", "<leader>j", function()
-	harpoon:list():select(2)
+    harpoon:list():select(2)
 end, { desc = "Got to second file in list" })
 vim.keymap.set("n", "<leader>k", function()
-	harpoon:list():select(3)
+    harpoon:list():select(3)
 end, { desc = "Got to third file in list" })
 vim.keymap.set("n", "<leader>l", function()
-	harpoon:list():select(4)
+    harpoon:list():select(4)
 end, { desc = "Got to fourth file in list" })
 -- Toggle previous & next buffers stored within Harpoon list
 vim.keymap.set("n", "<C-S-P>", function()
-	harpoon:list():prev()
+    harpoon:list():prev()
 end, { desc = "Go to previous file in list" })
 vim.keymap.set("n", "<C-S-N>", function()
-	harpoon:list():next()
+    harpoon:list():next()
 end, { desc = "Go to next file in list" })
 
 -- Trouble
 vim.keymap.set("n", "<leader>to", function()
-	require("trouble").open()
+    require("trouble").open()
 end, { desc = "Open trouble" })
 vim.keymap.set("n", "<leader>tw", function()
-	require("trouble").open("workspace_diagnostics")
+    require("trouble").open("workspace_diagnostics")
 end, { desc = "Open workspace diagnostics" })
 vim.keymap.set("n", "<leader>td", function()
-	require("trouble").open("document_diagnostics")
+    require("trouble").open("document_diagnostics")
 end, { desc = "Open document diagnostics" })
 vim.keymap.set("n", "<leader>tr", "<cmd>TroubleRefresh<CR>", { desc = "Refresh trouble" })
 vim.keymap.set("n", "<leader>tlr", function()
-	require("trouble").open("lsp_references")
+    require("trouble").open("lsp_references")
 end, { desc = "Open lsp references" })
 vim.keymap.set("n", "<leader>tld", function()
-	require("trouble").open("lsp_definitions")
+    require("trouble").open("lsp_definitions")
 end, { desc = "Open lsp definitions" })
 vim.keymap.set("n", "<leader>tlt", function()
-	require("trouble").open("lsp_type_definitions")
+    require("trouble").open("lsp_type_definitions")
 end, { desc = "Open lsp type definitions" })
 
 -- Todo Trouble
@@ -99,7 +99,7 @@ local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>pf", builtin.find_files, { desc = "Find files" })
 vim.keymap.set("n", "<C-p>", builtin.git_files, { desc = "Find git files" })
 vim.keymap.set("n", "<leader>ps", function()
-	builtin.grep_string({ search = vim.fn.input("Grep > ") })
+    builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end, { desc = "Project search" })
 
 -- Undotree
