@@ -104,3 +104,21 @@ end, { desc = "Project search" })
 
 -- Undotree
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Toggle undotree window" })
+
+-- Netrw keymap changes
+vim.api.nvim_create_autocmd('filetype', {
+  pattern = 'netrw',
+  desc = 'Better mappings for netrw',
+  callback = function()
+    local bind = function(lhs, rhs)
+      vim.keymap.set('n', lhs, rhs, {remap = true, buffer = true})
+    end
+
+    -- NvimTmuxNavigateRight in Netrw
+    bind('<C-l>', '<cmd>NvimTmuxNavigateRight<CR>')
+
+  end
+})
+
+-- Mason
+vim.keymap.set("n", "<leader>mo", "<cmd>Mason<CR>", { desc = "Open Mason" })

@@ -13,6 +13,7 @@ alias eza="eza --all"
 alias ezal="eza --all --long"
 alias cls="colorls -a"
 alias x="exit"
+alias c="clear"
 
 eval $(thefuck --alias)
 export PATH=$(brew --prefix sqlite)/bin:$PATH
