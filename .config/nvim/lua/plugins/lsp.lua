@@ -6,14 +6,8 @@ return {
 			"williamboman/mason-lspconfig.nvim",
 		},
 		config = function()
-			require("mason").setup({
-				ui = {
-					icons = {
-						enabled = true,
-						style = "solid",
-					},
-				},
-			})
+			require("mason").setup({})
+
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"clangd",
@@ -70,10 +64,6 @@ return {
             })
 
             lspconfig.lua_ls.setup({
-                capabilities = lsp_capabilities,
-            })
-
-            lspconfig.ocmallsp.setup({
                 capabilities = lsp_capabilities,
             })
 
