@@ -17,3 +17,6 @@ require("lazy").setup("plugins")
 require("config.keymaps")
 require("config.set")
 vim.cmd("colorscheme catppuccin")
+
+vim.cmd("autocmd BufEnter * set formatoptions-=cro")
+vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")

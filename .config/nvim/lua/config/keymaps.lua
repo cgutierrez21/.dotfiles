@@ -15,6 +15,10 @@ vim.keymap.set("n", "<leader>o", "zo", { desc = "open fold" })
 vim.keymap.set("v", "<leader>z", "zf", { desc = "create fold" })
 vim.keymap.set("n", "<leader>c", "zc", { desc = "close fold" })
 
+-- check mappings
+vim.keymap.set("n", "<leader>mcl", ":map <leader>", { desc = "Check leader mappings" })
+vim.keymap.set("n", "<leader>mcc", ":map <C-", { desc = "Check control mappings" })
+
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])

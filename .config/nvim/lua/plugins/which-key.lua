@@ -12,6 +12,8 @@ return {
 			["<leader>p"] = { name = "Search and Lazy keymaps" },
 			["<leader>v"] = { name = "LSP zero keymaps" },
 			["<leader>f"] = { name = "Code formatting" },
+			["<leader>m"] = { name = "Mason and check mappings" },
+			["<leader>mc"] = { name = "Check mappings" },
 		})
 	end,
 }

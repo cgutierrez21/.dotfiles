@@ -14,6 +14,7 @@ alias ezal="eza --all --long"
 alias cls="colorls -a"
 alias x="exit"
 alias c="clear"
+alias tms="tmux_sessionizer.sh"
 
 eval $(thefuck --alias)
 export PATH=$(brew --prefix sqlite)/bin:$PATH
@@ -33,6 +34,7 @@ function nvims() {
 }
 
 bindkey -s ^a "nvims\n"
+bindkey -s ^t "tms\n"
 bindkey -r "^L"
 
 
