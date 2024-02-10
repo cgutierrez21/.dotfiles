@@ -1,5 +1,6 @@
 return {
 	"nvimtools/none-ls.nvim",
+	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 	config = function()
 		local null_ls = require("null-ls")
 
@@ -8,7 +9,7 @@ return {
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.formatting.clang_format,
 				null_ls.builtins.diagnostics.cpplint,
-                null_ls.builtins.formatting.ocamlformat,
+				null_ls.builtins.formatting.ocamlformat,
 			},
 		})
 

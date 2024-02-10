@@ -21,6 +21,7 @@ return {
 
 	{
 		"folke/neodev.nvim",
+        event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 		config = function()
 			-- IMPORTANT: make sure to setup neodev BEFORE lspconfig
 			require("neodev").setup({
@@ -45,6 +46,7 @@ return {
 
 	{
 		"hrsh7th/nvim-cmp",
+        event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 		dependencies = {
 			"neovim/nvim-lspconfig",
 			"hrsh7th/cmp-nvim-lsp",
@@ -114,15 +116,18 @@ return {
 
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",
+        event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 		dependencies = "nvim-treesitter/nvim-treesitter",
 	},
 
 	{
 		"nvim-treesitter/nvim-treesitter-context",
+        event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 	},
 
 	{
 		"nvim-treesitter/nvim-treesitter",
+        event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 		build = ":TSUpdate",
 		config = function()
 			require("nvim-treesitter.configs").setup({

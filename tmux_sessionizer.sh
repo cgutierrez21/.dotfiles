@@ -1,1 +1,0 @@
-/usr/local/bin/tmux_sessionizer.sh

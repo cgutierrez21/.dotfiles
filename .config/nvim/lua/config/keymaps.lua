@@ -21,12 +21,11 @@ vim.keymap.set("n", "<leader>mcc", ":map <C-", { desc = "Check control mappings"
 
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank to system clipboard" })
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank entire line" })
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete to blackhole register" })
+vim.keymap.set({ "n", "v" }, "<leader>x", [["_d]], { desc = "Delete to blackhole register" })
 
 vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "<C-f>", "<cmd> !tmux neww tmux-sessionizer<CR>", { desc = "Switch tmux session" })

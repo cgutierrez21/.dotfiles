@@ -21,6 +21,7 @@ return {
 
     {
         "folke/todo-comments.nvim",
+        event = { "BufReadPost", "BufWritePost", "BufNewFile" },
         dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
             require("todo-comments").setup({
@@ -41,6 +42,7 @@ return {
 
     {
         "echasnovski/mini.pairs",
+        event = { "BufReadPost", "BufWritePost", "BufNewFile" },
         version = false,
     },
 }

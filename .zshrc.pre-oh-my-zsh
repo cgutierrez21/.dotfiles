@@ -1,6 +1,0 @@
-
-# For tkinter 
-export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
-
-[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
-alias clion="open /Applications/CLion.app"

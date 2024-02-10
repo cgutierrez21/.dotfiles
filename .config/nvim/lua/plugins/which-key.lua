@@ -14,6 +14,7 @@ return {
 			["<leader>f"] = { name = "Code formatting" },
 			["<leader>m"] = { name = "Mason and check mappings" },
 			["<leader>mc"] = { name = "Check mappings" },
+			["<leader>g"] = { name = "Git mappings" },
 		})
 	end,
 }
