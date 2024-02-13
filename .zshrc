@@ -1,3 +1,4 @@
+source ~/Repos/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 # For tkinter 
 export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
 
@@ -14,6 +15,8 @@ alias cls="colorls -a"
 alias x="exit"
 alias c="clear"
 alias tms="tmux_sessionizer.sh"
+alias nvim='nvim --startuptime /tmp/nvim-startuptime'
+alias cc="cd && c"
 
 eval $(thefuck --alias)
 export PATH=$(brew --prefix sqlite)/bin:$PATH
@@ -51,3 +54,5 @@ bindkey -r "^L"
 [[ ! -r /Users/cristiangutierrez/.opam/opam-init/init.zsh ]] || source /Users/cristiangutierrez/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 eval "$(starship init zsh)"
+
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

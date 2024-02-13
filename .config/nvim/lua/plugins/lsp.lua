@@ -16,12 +16,13 @@ return {
 				},
 				automatic_installation = true,
 			})
+			vim.keymap.set("n", "<leader>mo", "<cmd>Mason<CR>", { desc = "Open Mason" })
 		end,
 	},
 
 	{
 		"folke/neodev.nvim",
-        event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 		config = function()
 			-- IMPORTANT: make sure to setup neodev BEFORE lspconfig
 			require("neodev").setup({
@@ -46,7 +47,7 @@ return {
 
 	{
 		"hrsh7th/nvim-cmp",
-        event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 		dependencies = {
 			"neovim/nvim-lspconfig",
 			"hrsh7th/cmp-nvim-lsp",
@@ -54,24 +55,24 @@ return {
 		},
 		config = function()
 			local cmp = require("cmp")
-            local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
-            local lspconfig = require("lspconfig")
+			local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
+			local lspconfig = require("lspconfig")
 
-            lspconfig.clangd.setup({
-                capabilities = lsp_capabilities,
-            })
+			lspconfig.clangd.setup({
+				capabilities = lsp_capabilities,
+			})
 
-            lspconfig.cmake.setup({
-                capabilities = lsp_capabilities,
-            })
+			lspconfig.cmake.setup({
+				capabilities = lsp_capabilities,
+			})
 
-            lspconfig.lua_ls.setup({
-                capabilities = lsp_capabilities,
-            })
+			lspconfig.lua_ls.setup({
+				capabilities = lsp_capabilities,
+			})
 
-            lspconfig.pyright.setup({
-                capabilities = lsp_capabilities,
-            })
+			lspconfig.pyright.setup({
+				capabilities = lsp_capabilities,
+			})
 
 			cmp.setup({
 				sources = cmp.config.sources({
@@ -94,7 +95,6 @@ return {
 				},
 			})
 
-
 			vim.api.nvim_create_autocmd("LspAttach", {
 				desc = "LSP actions",
 				callback = function(event)
@@ -116,18 +116,18 @@ return {
 
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",
-        event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 		dependencies = "nvim-treesitter/nvim-treesitter",
 	},
 
 	{
 		"nvim-treesitter/nvim-treesitter-context",
-        event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 	},
 
 	{
 		"nvim-treesitter/nvim-treesitter",
-        event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 		build = ":TSUpdate",
 		config = function()
 			require("nvim-treesitter.configs").setup({

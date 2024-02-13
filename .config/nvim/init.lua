@@ -14,8 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 
 require("lazy").setup("plugins")
-require("config.keymaps")
-require("config.set")
+require("config")
 vim.cmd("colorscheme catppuccin")
 
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
