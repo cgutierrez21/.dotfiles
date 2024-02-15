@@ -56,3 +56,4 @@ bindkey -r "^L"
 eval "$(starship init zsh)"
 
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+eval "$(zoxide init --cmd cd zsh)"
