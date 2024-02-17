@@ -57,3 +57,4 @@ eval "$(starship init zsh)"
 
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval "$(zoxide init --cmd cd zsh)"
+export PATH="/opt/homebrew/opt/flex/bin:$PATH"

@@ -74,6 +74,16 @@ return {
 				capabilities = lsp_capabilities,
 			})
 
+			lspconfig.ocamllsp.setup({
+				capabilities = lsp_capabilities,
+			})
+
+			lspconfig.gopls.setup({
+				capabilities = lsp_capabilities,
+                cmd = {"gopls"},
+                filetypes = {"go", "gomod", "gowork", "gotmpl"}
+			})
+
 			cmp.setup({
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
