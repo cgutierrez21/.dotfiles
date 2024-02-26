@@ -15,7 +15,8 @@ vim.g.mapleader = " "
 
 require("lazy").setup("plugins")
 require("config")
-vim.cmd("colorscheme catppuccin")
+require("current-theme")
+--vim.cmd("colorscheme catppuccin")
 
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")

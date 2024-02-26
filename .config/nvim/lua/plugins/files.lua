@@ -12,18 +12,36 @@ return {
 			vim.keymap.set("n", "<C-e>", function()
 				harpoon.ui:toggle_quick_menu(harpoon:list())
 			end, { desc = "Toggle Harpoon menu" })
-			vim.keymap.set("n", "<leader>h", function()
+			vim.keymap.set("n", "<leader>1", function()
 				harpoon:list():select(1)
 			end, { desc = "Got to first file in list" })
-			vim.keymap.set("n", "<leader>j", function()
+			vim.keymap.set("n", "<leader>2", function()
 				harpoon:list():select(2)
 			end, { desc = "Got to second file in list" })
-			vim.keymap.set("n", "<leader>k", function()
+			vim.keymap.set("n", "<leader>3", function()
 				harpoon:list():select(3)
 			end, { desc = "Got to third file in list" })
-			vim.keymap.set("n", "<leader>l", function()
+			vim.keymap.set("n", "<leader>4", function()
 				harpoon:list():select(4)
 			end, { desc = "Got to fourth file in list" })
+			vim.keymap.set("n", "<leader>5", function()
+				harpoon:list():select(5)
+			end, { desc = "Got to fifth file in list" })
+			vim.keymap.set("n", "<leader>6", function()
+				harpoon:list():select(6)
+			end, { desc = "Got to sixth file in list" })
+			vim.keymap.set("n", "<leader>7", function()
+				harpoon:list():select(7)
+			end, { desc = "Got to seventh file in list" })
+			vim.keymap.set("n", "<leader>8", function()
+				harpoon:list():select(8)
+			end, { desc = "Got to eighth file in list" })
+			vim.keymap.set("n", "<leader>9", function()
+				harpoon:list():select(9)
+			end, { desc = "Got to ninth file in list" })
+			vim.keymap.set("n", "<leader>0", function()
+				harpoon:list():select(10)
+			end, { desc = "Got to tenth file in list" })
 			-- Toggle previous & next buffers stored within Harpoon list
 			vim.keymap.set("n", "<C-S-P>", function()
 				harpoon:list():prev()
@@ -48,6 +66,14 @@ return {
 			vim.keymap.set("n", "<leader>ps", function()
 				builtin.grep_string({ search = vim.fn.input("Grep > ") })
 			end, { desc = "Project search" })
+		end,
+	},
+
+	{
+		"andrew-george/telescope-themes",
+		config = function()
+			require("telescope").load_extension("themes")
+            vim.keymap.set("n", "<leader>ts", "<cmd>Telescope themes<CR>", {desc = "Theme Switcher"})
 		end,
 	},
 

@@ -80,8 +80,8 @@ return {
 
 			lspconfig.gopls.setup({
 				capabilities = lsp_capabilities,
-                cmd = {"gopls"},
-                filetypes = {"go", "gomod", "gowork", "gotmpl"}
+				cmd = { "gopls" },
+				filetypes = { "go", "gomod", "gowork", "gotmpl" },
 			})
 
 			cmp.setup({
@@ -95,8 +95,6 @@ return {
 					["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
 					["<C-y>"] = cmp.mapping.confirm({ select = true }),
 					["<C-space>"] = cmp.mapping.complete(),
-					["<Tab>"] = nil,
-					["<S-Tab>"] = nil,
 				}),
 				snippet = {
 					expand = function(args)
