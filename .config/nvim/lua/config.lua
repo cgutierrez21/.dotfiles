@@ -103,3 +103,7 @@ vim.api.nvim_create_autocmd('filetype', {
 
   end
 })
+
+-- Vim Fugitive
+vim.keymap.set({"n", "v"}, "<leader>gs", "<cmd>Git<CR>", { desc = "Show Git Fugitive"})
+vim.keymap.set({"n", "v"}, "<leader>gp", "<cmd>Git push<CR>", { desc = "Git Push"})
