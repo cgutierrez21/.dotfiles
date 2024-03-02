@@ -1,5 +1,7 @@
 -- Vim Options
 
+vim.diagnostic.config({ virtual_text = false })
+
 --vim.opt.background = "dark"
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
@@ -78,10 +80,10 @@ vim.keymap.set("n", "<C-f>", "<cmd> !tmux neww tmux-sessionizer<CR>", { desc = "
 vim.keymap.set("n", "Q", "<nop>")
 
 vim.keymap.set(
-    "n",
-    "<leader>s",
-    [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-    { desc = "Replace word under cursor" }
+	"n",
+	"<leader>s",
+	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+	{ desc = "Replace word under cursor" }
 )
 
 -- Lazypm
@@ -90,20 +92,19 @@ vim.keymap.set({ "n", "v" }, "<leader>pmu", "<cmd>Lazy update<CR>", { desc = "Up
 vim.keymap.set({ "n", "v" }, "<leader>pmp", "<cmd>Lazy profile<CR>", { desc = "Open Lazy profile" })
 
 -- Netrw keymap changes
-vim.api.nvim_create_autocmd('filetype', {
-  pattern = 'netrw',
-  desc = 'Better mappings for netrw',
-  callback = function()
-    local bind = function(lhs, rhs)
-      vim.keymap.set('n', lhs, rhs, {remap = true, buffer = true})
-    end
+vim.api.nvim_create_autocmd("filetype", {
+	pattern = "netrw",
+	desc = "Better mappings for netrw",
+	callback = function()
+		local bind = function(lhs, rhs)
+			vim.keymap.set("n", lhs, rhs, { remap = true, buffer = true })
+		end
 
-    -- NvimTmuxNavigateRight in Netrw
-    bind('<C-l>', '<cmd>NvimTmuxNavigateRight<CR>')
-
-  end
+		-- NvimTmuxNavigateRight in Netrw
+		bind("<C-l>", "<cmd>NvimTmuxNavigateRight<CR>")
+	end,
 })
 
 -- Vim Fugitive
-vim.keymap.set({"n", "v"}, "<leader>gs", "<cmd>Git<CR>", { desc = "Show Git Fugitive"})
-vim.keymap.set({"n", "v"}, "<leader>gp", "<cmd>Git push<CR>", { desc = "Git Push"})
+vim.keymap.set({ "n", "v" }, "<leader>gs", "<cmd>Git<CR>", { desc = "Show Git Fugitive" })
+vim.keymap.set({ "n", "v" }, "<leader>gp", "<cmd>Git push<CR>", { desc = "Git Push" })

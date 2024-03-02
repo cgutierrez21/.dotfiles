@@ -58,3 +58,12 @@ eval "$(starship init zsh)"
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval "$(zoxide init --cmd cd zsh)"
 export PATH="/opt/homebrew/opt/flex/bin:$PATH"
+
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _complete _ignored
+zstyle :compinstall filename '/Users/cristiangutierrez/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
