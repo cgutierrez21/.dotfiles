@@ -32,3 +32,5 @@ yabai -m rule --add app="^Alfred 5$" manage=off
 yabai -m rule --add app="^AppCleaner$" manage=off
 yabai -m rule --add app="^IINA$" manage=off 
 yabai -m rule --add app="^OBS$" manage=off
+
+yabai -m config external_bar all:32:0
