@@ -15,16 +15,16 @@ alias cls="colorls -a"
 alias x="exit"
 alias c="clear"
 alias tms="tmux_sessionizer.sh"
-alias nvim='nvim --startuptime /tmp/nvim-startuptime'
 alias cc="cd && c"
 
 eval $(thefuck --alias)
 export PATH=$(brew --prefix sqlite)/bin:$PATH
 
-alias nfocus="NVIM_APPNAME=nfocus nvim"
+alias nvim-default="NVIM_APPNAME=nvim nvim"
+# alias nvim-kick="NVIM_APPNAME=kickstart nvim"
 
 function nvims() {
-  items=("default" "nfocus" )
+    items=("default" ) # "kickstart" )
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
   if [[ -z $config ]]; then
     echo "Nothing selected"

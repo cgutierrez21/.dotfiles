@@ -75,4 +75,15 @@ return {
 			require("mini.pairs").setup()
 		end,
 	},
+
+	{
+		"numToStr/Comment.nvim",
+		opts = {
+			opleader = {
+				line = "<leader>/",
+				block = "<leader>*",
+			},
+		},
+		lazy = false,
+	},
 }
