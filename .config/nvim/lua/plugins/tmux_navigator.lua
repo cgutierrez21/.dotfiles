@@ -1,5 +1,5 @@
 return {
-	"alexghergh/nvim-tmux-navigation",
+	--[[ "alexghergh/nvim-tmux-navigation",
 	config = function()
 		local nvim_tmux_nav = require("nvim-tmux-navigation")
 
@@ -15,5 +15,5 @@ return {
             vim.keymap.set("n", "<C-Space>", "<cmd>NvimTmuxNavigateNext<CR>"),
 		})
 
-	end,
+	end, ]]
 }

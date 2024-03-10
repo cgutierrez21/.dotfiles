@@ -1,12 +1,7 @@
 -- Vim Options
-
 vim.diagnostic.config({ virtual_text = false })
-
---vim.opt.background = "dark"
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
---vim.cmd("hi! Comment gui=italic cterm=italic guifg=#d1d1d1")
---vim.cmd("hi! @variable guifg=#ff1c1c")
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -39,13 +34,7 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldcolumn = "1"
 vim.opt.foldlevel = 20
 
---vim.cmd("hi! Comment gui=italic cterm=italic guifg=#999999")
---vim.cmd("hi! @variable.cpp guifg=#ff1c1c")
---vim.cmd("hi! @Comment.cpp guifg=#999999")
-
 -- Keymaps
-
--- Non plugin
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>bt", "<cmd>TransparentEnable<CR>", { desc = "Transparent background" })
 vim.keymap.set("n", "<leader>bf", "<cmd>TransparentDisable<CR>", { desc = "Solid background" })
@@ -75,7 +64,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank entire line" })
 vim.keymap.set({ "n", "v" }, "<leader>x", [["_d]], { desc = "Delete to blackhole register" })
 
 vim.keymap.set("i", "<C-c>", "<Esc>")
-vim.keymap.set("n", "<C-f>", "<cmd> !tmux neww tmux-sessionizer<CR>", { desc = "Switch tmux session" })
+--vim.keymap.set("n", "<C-f>", "<cmd> !tmux neww tmux-sessionizer<CR>", { desc = "Switch tmux session" })  not using tmux right now
 
 vim.keymap.set("n", "Q", "<nop>")
 
@@ -92,7 +81,7 @@ vim.keymap.set({ "n", "v" }, "<leader>pmu", "<cmd>Lazy update<CR>", { desc = "Up
 vim.keymap.set({ "n", "v" }, "<leader>pmp", "<cmd>Lazy profile<CR>", { desc = "Open Lazy profile" })
 
 -- Netrw keymap changes
-vim.api.nvim_create_autocmd("filetype", {
+--[[ vim.api.nvim_create_autocmd("filetype", {
 	pattern = "netrw",
 	desc = "Better mappings for netrw",
 	callback = function()
@@ -103,7 +92,7 @@ vim.api.nvim_create_autocmd("filetype", {
 		-- NvimTmuxNavigateRight in Netrw
 		bind("<C-l>", "<cmd>NvimTmuxNavigateRight<CR>")
 	end,
-})
+}) ]]
 
 -- Vim Fugitive
 vim.keymap.set({ "n", "v" }, "<leader>gs", "<cmd>Git<CR>", { desc = "Show Git Fugitive" })
