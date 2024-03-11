@@ -45,6 +45,7 @@ bindkey -s ^a "nvims\n"
 bindkey -s ^t "tms\n"
 bindkey -s ^u "brew update && brew upgrade\n"
 bindkey -r "^L"
+bindkey '^y' autosuggest-accept
 
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
@@ -128,7 +129,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git colored-man-pages rust golang)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -160,3 +161,4 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
