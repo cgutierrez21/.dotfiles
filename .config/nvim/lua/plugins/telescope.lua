@@ -24,14 +24,20 @@ return {
 			pcall(require("telescope").load_extension, "ui-select")
 
 			local builtin = require("telescope.builtin")
-			vim.keymap.set("n", "<leader>tf", builtin.find_files, { desc = "Find files" })
-			vim.keymap.set("n", "<C-p>", builtin.git_files, { desc = "Find git files" })
-			vim.keymap.set("n", "<leader>tb", function()
+			vim.keymap.set({ "n", "v" }, "<leader>tf", builtin.find_files, { desc = "Find files" })
+			vim.keymap.set({ "n", "v" }, "<C-p>", builtin.git_files, { desc = "Find git files" })
+			vim.keymap.set({ "n", "v" }, "<leader>tb", function()
 				builtin.grep_string({ search = vim.fn.input("Grep > ") })
 			end, { desc = "Project search" })
-			vim.keymap.set("n", "<leader>tk", builtin.keymaps, { desc = "Search keymaps" })
-			vim.keymap.set("n", "<leader>ti", builtin.diagnostics, { desc = "Search diagnostics" })
-			vim.keymap.set("n", "<leader>tz", function()
+			vim.keymap.set({ "n", "v" }, "<leader>tk", builtin.keymaps, { desc = "Search keymaps" })
+			vim.keymap.set({ "n", "v" }, "<leader>ti", builtin.diagnostics, { desc = "Search diagnostics" })
+			vim.keymap.set(
+				{ "n", "v" },
+				"<leader>tls",
+				builtin.lsp_document_symbols,
+				{ desc = "Search document symbols" }
+			)
+			vim.keymap.set({ "n", "v" }, "<leader>tz", function()
 				builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
 					winblend = 10,
 					previewer = false,
@@ -44,7 +50,7 @@ return {
 		"andrew-george/telescope-themes",
 		config = function()
 			require("telescope").load_extension("themes")
-			vim.keymap.set("n", "<leader>ts", "<cmd>Telescope themes<CR>", { desc = "Theme Switcher" })
+			vim.keymap.set({ "n", "v" }, "<leader>ts", "<cmd>Telescope themes<CR>", { desc = "Theme Switcher" })
 		end,
 	},
 }

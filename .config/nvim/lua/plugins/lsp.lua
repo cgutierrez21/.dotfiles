@@ -81,7 +81,24 @@ return {
 			})
 
 			lspconfig.rust_analyzer.setup({
-				capabilities = lsp_capabilities,
+				settings = {
+					["rust-analyzer"] = {
+						imports = {
+							granularity = {
+								group = "module",
+							},
+							prefix = "self",
+						},
+						cargo = {
+							buildScripts = {
+								enable = true,
+							},
+						},
+						procMacro = {
+							enable = true,
+						},
+					},
+				},
 			})
 
 			cmp.setup({
