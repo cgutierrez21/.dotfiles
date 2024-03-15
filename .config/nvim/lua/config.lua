@@ -38,10 +38,14 @@ vim.opt.foldlevel = 20
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>bt", "<cmd>TransparentEnable<CR>", { desc = "Transparent background" })
 vim.keymap.set("n", "<leader>bf", "<cmd>TransparentDisable<CR>", { desc = "Solid background" })
-vim.keymap.set("", "<leader>pv", "<cmd>:Ex<CR>", { desc = "Exit to directory" })
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set({ "n", "v" }, "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
+
+vim.keymap.set({ "n", "v" }, "<C-j>", "<cmd>wincmd j<CR>")
+vim.keymap.set({ "n", "v" }, "<C-k>", "<cmd>wincmd k<CR>")
+vim.keymap.set({ "n", "v" }, "<C-l>", "<cmd>wincmd l<CR>")
+vim.keymap.set({ "n", "v" }, "<C-h>", "<cmd>wincmd h<CR>")
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -69,10 +73,10 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "Q", "<nop>")
 
 vim.keymap.set(
-	"n",
-	"<leader>s",
-	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-	{ desc = "Replace word under cursor" }
+    "n",
+    "<leader>s",
+    [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+    { desc = "Replace word under cursor" }
 )
 
 -- Lazypm
@@ -97,3 +101,6 @@ vim.keymap.set({ "n", "v" }, "<leader>pmp", "<cmd>Lazy profile<CR>", { desc = "O
 -- Vim Fugitive
 vim.keymap.set({ "n", "v" }, "<leader>gs", "<cmd>Git<CR>", { desc = "Show Git Fugitive" })
 vim.keymap.set({ "n", "v" }, "<leader>gp", "<cmd>Git push<CR>", { desc = "Git Push" })
+
+-- Oil nvim
+vim.keymap.set("", "<leader>pv", "<cmd>Oil<CR>", { desc = "Exit to directory" })

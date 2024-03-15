@@ -13,14 +13,11 @@ alias clion="open /Applications/CLion.app"
 
 alias systeminfo="system_profiler SPSoftwareDataType SPHardwareDataType"
 alias ghc="gh repo create"
-# alias tkill="tmux kill-session -t"
-# alias tattach="tmux a -t"
 alias eza="eza --all"
 alias ezal="eza --all --long"
 alias cls="colorls -a"
 alias x="exit"
 alias c="clear"
-# alias tms="tmux_sessionizer.sh"
 alias cc="cd && c"
 
 eval $(thefuck --alias)
@@ -42,7 +39,6 @@ function nvims() {
 }
 
 bindkey -s ^a "nvims\n"
-bindkey -s ^t "tms\n"
 bindkey -s ^u "brew update && brew upgrade\n"
 bindkey -r "^L"
 bindkey '^y' autosuggest-accept
