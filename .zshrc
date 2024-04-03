@@ -19,6 +19,8 @@ alias cls="colorls -a"
 alias x="exit"
 alias c="clear"
 alias cc="cd && c"
+alias gcm='git commit --message'
+alias gcmb='git checkout $(git_main_branch)'
 
 eval $(thefuck --alias)
 export PATH=$(brew --prefix sqlite)/bin:$PATH

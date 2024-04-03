@@ -68,4 +68,8 @@ return {
 		opts = {},
 		lazy = false,
 	},
+
+	{
+		"mrquantumcodes/configpulse",
+	},
 }

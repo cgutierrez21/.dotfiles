@@ -46,99 +46,40 @@ return {
 	},
 
 	{
-		"hrsh7th/nvim-cmp",
-		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+		"VonHeikemen/lsp-zero.nvim",
+		branch = "v3.x",
 		dependencies = {
-			"neovim/nvim-lspconfig",
-			"hrsh7th/cmp-nvim-lsp",
-			"L3MON4D3/LuaSnip",
+			{ "neovim/nvim-lspconfig" },
+			{ "hrsh7th/cmp-nvim-lsp" },
+			{ "hrsh7th/nvim-cmp" },
+			{ "L3MON4D3/LuaSnip" },
+			{ "williamboman/mason.nvim" },
+			{ "williamboman/mason-lspconfig.nvim" },
 		},
 		config = function()
-			local cmp = require("cmp")
-			local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
-			local lspconfig = require("lspconfig")
+			local lsp_zero = require("lsp-zero")
 
-			lspconfig.clangd.setup({
-				capabilities = lsp_capabilities,
-			})
+			lsp_zero.on_attach(function(client, bufnr)
+				-- see :help lsp-zero-keybindings
+				-- to learn the available actions
+				lsp_zero.default_keymaps({ buffer = bufnr })
+			end)
 
-			lspconfig.cmake.setup({
-				capabilities = lsp_capabilities,
-			})
-
-			lspconfig.lua_ls.setup({
-				capabilities = lsp_capabilities,
-			})
-
-			lspconfig.pyright.setup({
-				capabilities = lsp_capabilities,
-			})
-
-			lspconfig.gopls.setup({
-				capabilities = lsp_capabilities,
-				cmd = { "gopls" },
-				filetypes = { "go", "gomod", "gowork", "gotmpl" },
-			})
-
-			lspconfig.rust_analyzer.setup({
-				settings = {
-					["rust-analyzer"] = {
-						imports = {
-							granularity = {
-								group = "module",
-							},
-							prefix = "self",
-						},
-						cargo = {
-							buildScripts = {
-								enable = true,
-							},
-						},
-						procMacro = {
-							enable = true,
-						},
-					},
+			-- here you can setup the language servers
+			require("mason").setup({})
+			require("mason-lspconfig").setup({
+				ensure_installed = { "rust_analyzer", "clangd" },
+				handlers = {
+					lsp_zero.default_setup,
 				},
 			})
 
-			cmp.setup({
-				sources = cmp.config.sources({
-					{ name = "nvim_lsp" },
-				}, {
-					{ name = "buffer" },
-				}),
-				mapping = cmp.mapping.preset.insert({
-					["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
-					["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
-					["<C-y>"] = cmp.mapping.confirm({ select = true }),
-					["<C-space>"] = cmp.mapping.complete(),
-				}),
-				snippet = {
-					expand = function(args)
-						require("luasnip").lsp_expand(args.body)
-					end,
-				},
-			})
-
-			vim.api.nvim_create_autocmd("LspAttach", {
-				desc = "LSP actions",
-				callback = function(event)
-					local opts = { buffer = bufnr, remap = false }
-
-					vim.keymap.set("n", "gd", function()
-						vim.lsp.buf.definition()
-					end, { desc = "Jump to definition" })
-					vim.keymap.set("n", "K", function()
-						vim.lsp.buf.hover()
-					end, opts)
-					vim.keymap.set("n", "<leader>vr", function()
-						vim.lsp.buf.rename()
-					end, { desc = "Rename" })
-					vim.keymap.set("n", "<leader>va", function()
-						vim.lsp.buf.code_action()
-					end, { desc = "Code Action" })
-				end,
-			})
+			vim.keymap.set("n", "<leader>vr", function()
+				vim.lsp.buf.rename()
+			end, { desc = "Rename" })
+			vim.keymap.set("n", "<leader>va", function()
+				vim.lsp.buf.code_action()
+			end, { desc = "Code Action" })
 		end,
 	},
 
@@ -152,6 +93,10 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter-context",
 		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+		opts = {
+			max_lines = 2,
+			multiline_threshold = 2,
+		},
 	},
 
 	{

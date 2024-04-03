@@ -1,4 +1,8 @@
 return {
+	--[[ config = function()
+		require("barbecue").setup({
+		})
+	end, ]]
 	--[[ "alexghergh/nvim-tmux-navigation",
 	config = function()
 		local nvim_tmux_nav = require("nvim-tmux-navigation")
