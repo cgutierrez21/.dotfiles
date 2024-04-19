@@ -21,12 +21,26 @@ alias c="clear"
 alias cc="cd && c"
 alias gcm='git commit --message'
 alias gcmb='git checkout $(git_main_branch)'
+alias fzfn='nvim -o `fzf`'
 
 eval $(thefuck --alias)
 export PATH=$(brew --prefix sqlite)/bin:$PATH
 
 alias nvim-default="NVIM_APPNAME=nvim nvim"
 # alias nvim-kick="NVIM_APPNAME=kickstart nvim"
+
+# fzf
+eval "$(fzf --zsh)"
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+# --- setup fzf theme ---
+fg="#ffffff"
+bg="#1A0021"
+bg_highlight="#002938"
+purple="#9600EA"
+blue="#165AFF"
+cyan="#01E2F1"
+
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
 
 function nvims() {
     items=("default" ) # "kickstart" )
