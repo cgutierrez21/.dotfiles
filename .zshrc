@@ -13,9 +13,7 @@ alias clion="open /Applications/CLion.app"
 
 alias systeminfo="system_profiler SPSoftwareDataType SPHardwareDataType"
 alias ghc="gh repo create"
-alias eza="eza --all"
-alias ezal="eza --all --long"
-alias cls="colorls -a"
+alias cls="colorls -a --sd"
 alias x="exit"
 alias c="clear"
 alias cc="cd && c"
@@ -174,3 +172,6 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/Dotfiles/.p10k.zsh.
+[[ ! -f ~/Dotfiles/.p10k.zsh ]] || source ~/Dotfiles/.p10k.zsh
