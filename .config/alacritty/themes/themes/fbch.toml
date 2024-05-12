@@ -1,0 +1,32 @@
+# FBCH
+
+# Default colors
+[colors.primary]
+background = '#110011'
+foreground = '#EA00EA'
+
+[colors.cursor]
+text   = '#000000'
+cursor = '#EA00EA'
+
+# Normal colors
+[colors.normal]
+black   = '#9C9C9C'
+red     = '#ff0000'
+green   = '#00ff00'
+yellow  = '#F9F90E'
+blue    = '#0000ff'
+magenta = '#C900FF'
+cyan    = '#00FFFF'
+white   = '#ffffff'
+
+# Bright colors
+[colors.bright]
+black   = '#9C9C9C'
+red     = '#ff0000'
+green   = '#00ff00'
+yellow  = '#F9F90E'
+blue    = '#0000ff'
+magenta = '#C900FF'
+cyan    = '#00FFFF'
+white   = '#ffffff'
