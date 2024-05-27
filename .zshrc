@@ -24,8 +24,7 @@ alias fzfn='nvim -o `fzf`'
 eval $(thefuck --alias)
 export PATH=$(brew --prefix sqlite)/bin:$PATH
 
-alias nvim-default="NVIM_APPNAME=nvim nvim"
-# alias nvim-kick="NVIM_APPNAME=kickstart nvim"
+alias lvim="NVIM_APPNAME=lvim nvim"
 
 # fzf
 eval "$(fzf --zsh)"
@@ -41,7 +40,7 @@ cyan="#01E2F1"
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
 
 function nvims() {
-    items=("default" ) # "kickstart" )
+    items=("default" "lvim" ) # "kickstart" )
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
   if [[ -z $config ]]; then
     echo "Nothing selected"
