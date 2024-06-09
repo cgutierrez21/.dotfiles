@@ -98,9 +98,5 @@ vim.keymap.set({ "n", "v" }, "<leader>pmp", "<cmd>Lazy profile<CR>", { desc = "O
 	end,
 }) ]]
 
--- Vim Fugitive
-vim.keymap.set({ "n", "v" }, "<leader>gs", "<cmd>Git<CR>", { desc = "Show Git Fugitive" })
-vim.keymap.set({ "n", "v" }, "<leader>gp", "<cmd>Git push<CR>", { desc = "Git Push" })
-
 -- Oil nvim
 vim.keymap.set("", "<leader>pv", "<cmd>Oil<CR>", { desc = "Exit to directory" })
