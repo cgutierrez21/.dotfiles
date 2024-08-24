@@ -1,27 +1,21 @@
 return {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    init = function()
-        vim.o.timeout = true
-        vim.o.timeoutlen = 100
-    end,
-    config = function()
-        require("which-key").register({
-            ["<leader>"] = {
-                t = { name = "+Trouble and Telescope keymaps" },
-                b = { name = "+Background keymaps" },
-                p = {
-                    name = "+To directory and Lazy keymaps",
-                    m = "+Lazy keymaps",
-                },
-                v = { name = "+LSP keymaps" },
-                f = { name = "+Code formatting" },
-                m = {
-                    name = "+Mason and check mappings",
-                    c = "Check mappings",
-                },
-                g = { name = "+Git mappings" },
-            },
-        })
-    end,
+	"folke/which-key.nvim",
+	event = "VeryLazy",
+	init = function()
+		vim.o.timeout = true
+		vim.o.timeoutlen = 100
+	end,
+	config = function()
+		require("which-key").add({
+			{ "<leader>b", group = "Background Keymaps" },
+			{ "<leader>f", group = "Code formatting" },
+			{ "<leader>g", group = "Git mappings" },
+			{ "<leader>m", group = "Mason and check mappings" },
+			{ "<leader>mc", group = "Check Mappings" },
+			{ "<leader>p", group = "To directory and Lazy keymaps" },
+			{ "<leader>pm", group = "+Lazy keymaps" },
+			{ "<leader>t", group = "Trouble and Telescope keymaps" },
+			{ "<leader>v", group = "LSP Keymaps" },
+		})
+	end,
 }
