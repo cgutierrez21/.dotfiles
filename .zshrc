@@ -27,17 +27,17 @@ export PATH=$(brew --prefix sqlite)/bin:$PATH
 alias lvim="NVIM_APPNAME=lvim nvim"
 
 # fzf
-eval "$(fzf --zsh)"
-export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
-# --- setup fzf theme ---
-fg="#ffffff"
-bg="#1A0021"
-bg_highlight="#002938"
-purple="#9600EA"
-blue="#165AFF"
-cyan="#01E2F1"
-
-export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
+# eval "$(fzf --zsh)"
+# export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+# # --- setup fzf theme ---
+# fg="#ffffff"
+# bg="#1A0021"
+# bg_highlight="#002938"
+# purple="#9600EA"
+# blue="#165AFF"
+# cyan="#01E2F1"
+#
+# export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
 
 function nvims() {
     items=("default" "lvim" ) # "kickstart" )
