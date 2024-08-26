@@ -20,24 +20,26 @@ alias cc="cd && c"
 alias gcm='git commit --message'
 alias gcmb='git checkout $(git_main_branch)'
 alias fzfn='nvim -o `fzf`'
+alias pfzf='fzf --preview=if [[ $(file --mime-type {}) =~ image.* ]]; then kitty +kitten icat {} fi'
 
 eval $(thefuck --alias)
 export PATH=$(brew --prefix sqlite)/bin:$PATH
 
 alias lvim="NVIM_APPNAME=lvim nvim"
 
-# fzf
-# eval "$(fzf --zsh)"
-# export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
-# # --- setup fzf theme ---
-# fg="#ffffff"
-# bg="#1A0021"
-# bg_highlight="#002938"
-# purple="#9600EA"
-# blue="#165AFF"
-# cyan="#01E2F1"
-#
-# export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
+eval "$(fzf --zsh)"
+# --- setup fzf theme ---
+fg="#ffffff"
+bg="#1A0021"
+bg_highlight="#002938"
+purple="#9600EA"
+blue="#165AFF"
+cyan="#01E2F1"
+# export FZF_DEFAULT_OPTS='--preview "kitty +kitten icat --transfer-mode file --place --clear {} || bat --style=numbers --color=always {} 2>/dev/null || echo {}" --layout=reverse --border --height 40% --layout=reverse --border'
+# export FZF_DEFAULT_OPTS='--preview "kitty +kitten icat {} 2>/dev/null; bat --style=numbers --color=always {} 2>/dev/null || echo {}"'
+# export FZF_DEFAULT_OPTS='--preview "sleep 0.9; kitty +kitten icat {} 2>/dev/null; bat --style=numbers --color=always {} 2>/dev/null || echo {}"'
+export FZF_DEFAULT_OPTS='--preview "file --mime-type {} | grep -q image && kitty +kitten icat {} 2>/dev/null; file {} | grep -q text && bat --style=numbers --color=always {} 2>/dev/null || echo {}"'
+export FZF_PREVIEW_WINDOW_TIMEOUT=5
 
 function nvims() {
     items=("default" "lvim" ) # "kickstart" )
