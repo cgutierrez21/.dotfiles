@@ -1,3 +1,4 @@
+neofetch
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -15,12 +16,12 @@ alias systeminfo="system_profiler SPSoftwareDataType SPHardwareDataType"
 alias ghc="gh repo create"
 alias cls="colorls -a --sd"
 alias x="exit"
-alias c="clear"
+alias c="clear && neofetch"
 alias cc="cd && c"
 alias gcm='git commit --message'
 alias gcmb='git checkout $(git_main_branch)'
 alias fzfn='nvim -o `fzf`'
-alias pfzf='fzf --preview=if [[ $(file --mime-type {}) =~ image.* ]]; then kitty +kitten icat {} fi'
+alias n="neofetch"
 
 eval $(thefuck --alias)
 export PATH=$(brew --prefix sqlite)/bin:$PATH
@@ -52,6 +53,7 @@ function nvims() {
   fi
   NVIM_APPNAME=$config nvim $@
 }
+
 
 bindkey -s ^a "nvims\n"
 bindkey -s ^u "brew update && brew upgrade\n"
