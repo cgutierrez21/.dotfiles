@@ -6,3 +6,5 @@
 [user]
 	name = Cristian
 	email = 41880357+cgutierrez21@users.noreply.github.com
+[rerere]
+	enabled = true
