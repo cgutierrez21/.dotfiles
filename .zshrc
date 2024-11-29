@@ -22,6 +22,7 @@ alias gcm='git commit --message'
 alias gcmb='git checkout $(git_main_branch)'
 alias fzfn='nvim -o `fzf`'
 alias n="neofetch"
+alias load_monkey="./load_monkey.sh"
 
 eval $(thefuck --alias)
 export PATH=$(brew --prefix sqlite)/bin:$PATH

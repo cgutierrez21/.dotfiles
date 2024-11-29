@@ -59,6 +59,7 @@ return {
 					operators = {},
 				},
 				color_overrides = {
+					--[[
 					macchiato = {
 						base = "#131313",
 						mantle = "#101010",
@@ -77,6 +78,28 @@ return {
 						blue = "#3f3fff",
 						sky = "#0363d6",
 						lavender = "#6d29bd",
+						comments = "#4a4a4a",
+					},
+                    ]]
+					--
+					macchiato = {
+						base = "#000000",
+						mantle = "#101010",
+						crust = "#0d0d0d",
+						text = "#ebebeb",
+						rosewater = "#ff206e",
+						flamingo = "#ff4d80",
+						pink = "#d63af9",
+						mauve = "#5d3954",
+						red = "#ba1200",
+						maroon = "#500000",
+						peach = "#f46036",
+						yellow = "#fbff12",
+						green = "#2a7e19",
+						teal = "#2a7e19",
+						blue = "#0267c1",
+						sky = "#7692ff",
+						lavender = "#c874d9",
 						comments = "#4a4a4a",
 					},
 					mocha = {
