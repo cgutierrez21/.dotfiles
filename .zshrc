@@ -24,7 +24,6 @@ alias fzfn='nvim -o `fzf`'
 alias n="neofetch"
 alias load_monkey="./load_monkey.sh"
 
-eval $(thefuck --alias)
 export PATH=$(brew --prefix sqlite)/bin:$PATH
 
 alias lvim="NVIM_APPNAME=lvim nvim"
