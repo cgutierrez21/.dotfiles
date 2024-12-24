@@ -8,13 +8,13 @@ return {
 	config = function()
 		require("which-key").add({
 			{ "<leader>b", group = "Background Keymaps" },
-			{ "<leader>f", group = "Telescope Find Files" },
+			{ "<leader>f", group = "Code formatting" },
 			{ "<leader>g", group = "Git mappings" },
 			{ "<leader>m", group = "Mason and check mappings" },
 			{ "<leader>mc", group = "Check Mappings" },
 			{ "<leader>p", group = "To directory and Lazy keymaps" },
 			{ "<leader>pm", group = "+Lazy keymaps" },
-			{ "<leader>t", group = "Telescope keymaps" },
+			{ "<leader>t", group = "Trouble and Telescope keymaps" },
 			{ "<leader>v", group = "LSP Keymaps" },
 		})
 	end,

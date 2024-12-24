@@ -1,85 +1,42 @@
 return {
+    {
+        "neovim/nvim-lspconfig",
+        dependencies = {
+            'Saghen/blink.cmp',
 
-	{
-		"williamboman/mason.nvim",
-		dependencies = {
-			"williamboman/mason-lspconfig.nvim",
-		},
-		config = function()
-			require("mason").setup({})
-
-			require("mason-lspconfig").setup({
-				ensure_installed = {
-					"clangd",
-					"pyright",
-					"cmake",
-				},
-				automatic_installation = true,
-			})
-			vim.keymap.set("n", "<leader>mo", "<cmd>Mason<CR>", { desc = "Open Mason" })
-		end,
-	},
-
-	{
-		"folke/neodev.nvim",
-		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
-		config = function()
-			-- IMPORTANT: make sure to setup neodev BEFORE lspconfig
-			require("neodev").setup({
-				-- add any options here, or leave empty to use the default settings
-			})
-
-			-- then setup your lsp server as usual
-			local lspconfig = require("lspconfig")
-
-			-- example to setup lua_ls and enable call snippets
-			lspconfig.lua_ls.setup({
-				settings = {
-					Lua = {
-						completion = {
-							callSnippet = "Replace",
-						},
-					},
-				},
-			})
-		end,
-	},
-
-	{
-		"VonHeikemen/lsp-zero.nvim",
-		branch = "v3.x",
-		dependencies = {
-			{ "neovim/nvim-lspconfig" },
-			{ "hrsh7th/cmp-nvim-lsp" },
-			{ "hrsh7th/nvim-cmp" },
-			{ "L3MON4D3/LuaSnip" },
-			{ "williamboman/mason.nvim" },
-			{ "williamboman/mason-lspconfig.nvim" },
-		},
-		config = function()
-			local lsp_zero = require("lsp-zero")
-
-			lsp_zero.on_attach(function(client, bufnr)
-				-- see :help lsp-zero-keybindings
-				-- to learn the available actions
-				lsp_zero.default_keymaps({ buffer = bufnr })
-			end)
-
-			-- here you can setup the language servers
-			require("mason").setup({})
-			require("mason-lspconfig").setup({
-				ensure_installed = { "rust_analyzer", "clangd" },
-				handlers = {
-					lsp_zero.default_setup,
-				},
-			})
-
-			vim.keymap.set("n", "<leader>vr", function()
-				vim.lsp.buf.rename()
-			end, { desc = "Rename" })
-			vim.keymap.set("n", "<leader>va", function()
-				vim.lsp.buf.code_action()
-			end, { desc = "Code Action" })
-		end,
-	},
+            {
+                "folke/lazydev.nvim",
+                ft = "lua", -- only load on lua files
+                opts = {
+                    library = {
+                        -- See the configuration section for more details
+                        -- Load luvit types when the `vim.uv` word is found
+                        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+                    },
+                },
+            },
+        },
+        config = function()
+            local capabilities = require("blink.cmp").get_lsp_capabilities()
+            require("lspconfig").rust_analyzer.setup { capabilities = capabilities }
+            require("lspconfig").lua_ls.setup { capabilities = capabilities }
+            vim.api.nvim_create_autocmd("LspAttach", {
+                callback = function(args)
+                    local client = vim.lsp.get_client_by_id(args.data.client_id)
+                    if not client then
+                        return
+                    end
+                    if client.supports_method("textDocument/formatting") then
+                        -- Create a keymap for vim.lsp.buf.rename()
+                        vim.api.nvim_create_autocmd("BufWritePre", {
+                            buffer = args.buf,
+                            callback = function()
+                                vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
+                            end,
+                        })
+                    end
+                end,
+            })
+        end,
+    },
 }

@@ -84,13 +84,19 @@ vim.keymap.set({ "n", "v" }, "<leader>pml", "<cmd>Lazy<CR>", { desc = "Open Lazy
 vim.keymap.set({ "n", "v" }, "<leader>pmu", "<cmd>Lazy update<CR>", { desc = "Update Lazy plugins" })
 vim.keymap.set({ "n", "v" }, "<leader>pmp", "<cmd>Lazy profile<CR>", { desc = "Open Lazy profile" })
 
+-- Netrw keymap changes
+--[[ vim.api.nvim_create_autocmd("filetype", {
+	pattern = "netrw",
+	desc = "Better mappings for netrw",
+	callback = function()
+		local bind = function(lhs, rhs)
+			vim.keymap.set("n", lhs, rhs, { remap = true, buffer = true })
+		end
+
+		-- NvimTmuxNavigateRight in Netrw
+		bind("<C-l>", "<cmd>NvimTmuxNavigateRight<CR>")
+	end,
+}) ]]
+
 -- Oil nvim
 vim.keymap.set("", "<leader>pv", "<cmd>Oil<CR>", { desc = "Exit to directory" })
-
--- Internal Terminal
-vim.keymap.set({ "n", "v" }, "<leader>ko", function()
-	vim.cmd.vnew()
-	vim.cmd.term()
-	vim.cmd.wincmd("J")
-	vim.api.nvim_win_set_height(0, 15)
-end)
